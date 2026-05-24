@@ -3,6 +3,10 @@
     color: var(--white);
 }
 
+::selection {
+    background-color: rgba(from black r g b / 0.2);
+}
+
 p {
     margin: 0;
 }
@@ -11,4 +15,5 @@ input[type="checkbox"] {
     align-self: center;
     margin: 3px;
     cursor: pointer;
+    accent-color: var(--background-gradient-end);
 }

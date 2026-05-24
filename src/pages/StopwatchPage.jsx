@@ -1,3 +1,4 @@
+import Stopwatch from "../components/Stopwatch";
 import NavigationPane from '../components/NavigationPane';
 
 function StopwatchPage() {
@@ -5,6 +6,7 @@ function StopwatchPage() {
 
     return (
         <>
+            <Stopwatch />
             <NavigationPane highlight={CURRENT_PAGE} />
         </>
     );

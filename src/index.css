@@ -1,6 +1,8 @@
 :root {
   --background-gradient-start: oklch(64.325% 0.10247 71.33);
   --background-gradient-end: oklch(65.636% 0.14326 49.668);
+
+  --white: rgb(245 245 245);
 }
 
 html,

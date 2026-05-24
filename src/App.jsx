@@ -1,17 +1,15 @@
-import { useState } from 'react';
-import Clock from "./components/Clock";
-import ClockOptions from './components/ClockOptions';
+import { Navigate, Routes, Route } from 'react-router';
+import ClockPage from './pages/ClockPage';
 
 import './App.css'
 
 function App() {
-  const [use24Hours, setUse24Hours] = useState(false);
 
   return (
-    <>
-      <Clock use24Hours={use24Hours} />
-      <ClockOptions use24Hours={use24Hours} setUse24Hours={setUse24Hours} />
-    </>
+    <Routes>
+      <Route index element={<Navigate to="/clock" />} />
+      <Route path="/clock" element={<ClockPage />} />
+    </Routes>
   )
 }
 

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import zfill from "../utils/zfill";
 
+import "./Containers.css";
 import "./Clock.css";
 
 function Clock({ use24Hours }) {
@@ -37,7 +38,7 @@ function Clock({ use24Hours }) {
                 </p>
             </div>
 
-            <div className="clockContainer">
+            <div className="mainContainer">
                 <p className="clockLabel">
                     {getTime()}
                 </p>

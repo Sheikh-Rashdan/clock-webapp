@@ -1,11 +1,20 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import zfill from "../utils/zfill";
 
 import './Stopwatch.css';
 
-function Stopwatch() {
-    const [isStopwatchOn, setIsStopwatchOn] = useState(false);
-    const [stopwatchSeconds, setStopwatchSeconds] = useState(0);
+function Stopwatch({ isStopwatchOn, stopwatchSeconds, setStopwatchSeconds }) {
+
+    useEffect(() => {
+        if (isStopwatchOn) {
+            const timeout = setTimeout(() => setStopwatchSeconds(stopwatchSeconds + 1), 50);
+            return () => clearTimeout(timeout);
+        }
+    }, [isStopwatchOn, stopwatchSeconds, setStopwatchSeconds]);
+
+    function resetStopwatchSeconds() {
+        setStopwatchSeconds(0);
+    }
 
     function getFormattedStopwatchSeconds() {
         let seconds = stopwatchSeconds % 60;
@@ -18,7 +27,7 @@ function Stopwatch() {
     }
 
     return (
-        <div className="stopwatchContainer">
+        <div className="mainContainer">
             {getFormattedStopwatchSeconds()}
         </div>
     );

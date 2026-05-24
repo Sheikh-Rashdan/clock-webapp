@@ -8,14 +8,10 @@ function Stopwatch({ isStopwatchOn, stopwatchSeconds, setStopwatchSeconds }) {
 
     useEffect(() => {
         if (isStopwatchOn) {
-            const timeout = setTimeout(() => setStopwatchSeconds(stopwatchSeconds + 1), 50);
+            const timeout = setTimeout(() => setStopwatchSeconds(stopwatchSeconds + 1), 1000);
             return () => clearTimeout(timeout);
         }
     }, [isStopwatchOn, stopwatchSeconds, setStopwatchSeconds]);
-
-    function resetStopwatchSeconds() {
-        setStopwatchSeconds(0);
-    }
 
     function getFormattedStopwatchSeconds() {
         let seconds = stopwatchSeconds % 60;

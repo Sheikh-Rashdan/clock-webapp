@@ -20,3 +20,8 @@
 .navigationButton.highlight {
     filter: invert(100%);
 }
+
+.navigationButton img {
+    width: 2rem;
+    aspect-ratio: 1;
+}

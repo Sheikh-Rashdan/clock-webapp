@@ -7,11 +7,6 @@
     justify-self: center;
 }
 
-.navigationPane img {
-    width: 2rem;
-    aspect-ratio: 1;
-}
-
 /*For NavLink underlines*/
 * {
     text-decoration: none;

@@ -22,7 +22,7 @@ function Clock({ use24Hours }) {
 
     function getTime() {
         let hours = now.getHours();
-        const meridiem = (!use24Hours ? (hours >= 12 ? "PM" : "AM") : "")
+        const meridiem = (!use24Hours ? (hours >= 12 ? "PM" : "AM") : "Hrs")
         if (!use24Hours) hours %= 12;
         hours = zfill(hours);
         const minutes = zfill(now.getMinutes());

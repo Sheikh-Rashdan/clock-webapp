@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Clock from "./components/Clock";
+import ClockOptions from './components/ClockOptions';
 
 import './App.css'
 
@@ -9,6 +10,7 @@ function App() {
   return (
     <>
       <Clock use24Hours={use24Hours} />
+      <ClockOptions use24Hours={use24Hours} setUse24Hours={setUse24Hours} />
     </>
   )
 }

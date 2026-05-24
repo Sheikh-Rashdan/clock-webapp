@@ -9,11 +9,15 @@ function StopwatchPage() {
     const [stopwatchSeconds, setStopwatchSeconds] = useState(cleanGetItem(STOPWATCH_SECONDS_KEY, 0));
     const stopwatchStartTime = cleanGetItem(STOPWATCH_START_TIME_KEY, new Date());
 
+    function setStopwatchSecondByLocalStorage() {
+        const milliSecondsPassed = new Date() - new Date(stopwatchStartTime);
+        const secondsPassed = Math.floor(milliSecondsPassed / 1000);
+        setStopwatchSeconds(secondsPassed);
+    }
+
     useEffect(() => {
         if (isStopwatchOn) {
-            const milliSecondsPassed = new Date() - new Date(stopwatchStartTime);
-            const secondsPassed = Math.floor(milliSecondsPassed / 1000);
-            setStopwatchSeconds(secondsPassed);
+            setStopwatchSecondByLocalStorage();
         }
     }, [])
 

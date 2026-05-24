@@ -4,13 +4,14 @@ import ClockOptions from '../components/ClockOptions';
 import NavigationPane from '../components/NavigationPane';
 
 function ClockPage() {
+    const CURRENT_PAGE = "clock";
     const [use24Hours, setUse24Hours] = useState(false);
 
     return (
         <>
             <Clock use24Hours={use24Hours} />
             <ClockOptions use24Hours={use24Hours} setUse24Hours={setUse24Hours} />
-            <NavigationPane highlight={"clock"} />
+            <NavigationPane highlight={CURRENT_PAGE} />
         </>
     );
 }

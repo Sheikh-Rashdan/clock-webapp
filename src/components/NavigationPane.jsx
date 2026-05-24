@@ -1,9 +1,9 @@
 import NavigationButton from './NavigationButton';
 
 import "./NavigationPane.css";
-import clockIcon from "../assets/clock.png";
-import stopwatchIcon from "../assets/stopwatch.png";
-import alarmIcon from "../assets/alarm.png";
+import clockIcon from "../assets/pages/clock.png";
+import stopwatchIcon from "../assets/pages/stopwatch.png";
+import alarmIcon from "../assets/pages/alarm.png";
 
 function NavigationPane({ highlight }) {
     return (

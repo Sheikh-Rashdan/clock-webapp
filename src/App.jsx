@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Clock from "./components/clock";
+import Clock from "./components/Clock";
 
 import './App.css'
 

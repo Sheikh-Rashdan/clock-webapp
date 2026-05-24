@@ -6,9 +6,10 @@ function Clock({ use24Hours }) {
     const [now, setNow] = useState(new Date());
 
     useEffect(() => {
-        setInterval(() => {
+        const interval = setInterval(() => {
             setNow(new Date());
         }, 30000);
+        return () => clearInterval(interval);
     }, []);
 
     function zfill(number, zeroes = 2) {

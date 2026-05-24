@@ -1,3 +1,12 @@
-.Use24HoursLabel {
+.use24HoursLabel {
     cursor: pointer;
+}
+
+.use24HoursContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0.25rem;
+    text-align: center;
 }

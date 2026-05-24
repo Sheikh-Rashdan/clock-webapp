@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import zfill from "../utils/zfill";
 
+import './Containers.css';
 import './Stopwatch.css';
 
 function Stopwatch({ isStopwatchOn, stopwatchSeconds, setStopwatchSeconds }) {

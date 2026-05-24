@@ -16,6 +16,5 @@
     text-align: center;
     margin-top: 0.5rem;
     display: flex;
-    justify-content: center;
-    gap: 0.25rem;
+    justify-content: space-evenly;
 }

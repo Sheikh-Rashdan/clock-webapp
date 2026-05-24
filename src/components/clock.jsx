@@ -29,12 +29,24 @@ function Clock({ use24Hours }) {
         return hours + ":" + minutes + " " + meridiem;
     }
 
+    function getDate() {
+        return now.toLocaleString("default", { "day": "2-digit", "month": "long", "year": "numeric", "weekday": "long" });
+    }
+
     return (
-        <div className="clockContainer">
-            <p className="clockLabel">
-                {getTime()}
-            </p>
-        </div>
+        <>
+            <div className="dateContainer">
+                <p className="dateLabel">
+                    {getDate()}
+                </p>
+            </div>
+
+            <div className="clockContainer">
+                <p className="clockLabel">
+                    {getTime()}
+                </p>
+            </div>
+        </>
     );
 }
 

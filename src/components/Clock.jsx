@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import zfill from "../utils/zfill";
 
 import "./Clock.css";
 
@@ -12,18 +13,13 @@ function Clock({ use24Hours }) {
         return () => clearInterval(interval);
     }, []);
 
-    function zfill(number, zeroes = 2) {
-        number = String(number);
-        while (number.length < zeroes) {
-            number = "0" + number;
-        }
-        return number;
-    }
-
     function getTime() {
         let hours = now.getHours();
         const meridiem = (!use24Hours ? (hours >= 12 ? "PM" : "AM") : "Hrs")
-        if (!use24Hours) hours %= 12;
+        if (!use24Hours) {
+            hours %= 12;
+            if (hours === 0) hours = 12;
+        }
         hours = zfill(hours);
         const minutes = zfill(now.getMinutes());
         return hours + ":" + minutes + " " + meridiem;

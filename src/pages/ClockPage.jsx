@@ -6,11 +6,12 @@ import NavigationPane from '../components/NavigationPane';
 function ClockPage() {
     const CURRENT_PAGE = "clock";
     const [use24Hours, setUse24Hours] = useState(false);
+    const [popLabel, setPopLabel] = useState(false);
 
     return (
         <>
-            <Clock use24Hours={use24Hours} />
-            <ClockOptions use24Hours={use24Hours} setUse24Hours={setUse24Hours} />
+            <Clock {...{ use24Hours, popLabel, setPopLabel }} />
+            <ClockOptions {...{ use24Hours, setUse24Hours, setPopLabel }} />
             <NavigationPane highlight={CURRENT_PAGE} />
         </>
     );

@@ -4,7 +4,7 @@ import zfill from "../utils/zfill";
 import "./Containers.css";
 import "./Clock.css";
 
-function Clock({ use24Hours }) {
+function Clock({ use24Hours, popLabel, setPopLabel }) {
     const [now, setNow] = useState(new Date());
 
     useEffect(() => {
@@ -13,6 +13,12 @@ function Clock({ use24Hours }) {
         }, 30000);
         return () => clearInterval(interval);
     }, []);
+
+    useEffect(() => {
+        if (popLabel) {
+            setTimeout(() => setPopLabel(false), 300);
+        }
+    }, [popLabel, setPopLabel]);
 
     function getTime() {
         let hours = now.getHours();
@@ -39,7 +45,7 @@ function Clock({ use24Hours }) {
             </div>
 
             <div className="mainContainer">
-                <p className="clockLabel">
+                <p className={`clockLabel ${popLabel ? "popThis" : ""}`}>
                     {getTime()}
                 </p>
             </div>

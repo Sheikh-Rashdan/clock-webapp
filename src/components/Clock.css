@@ -3,3 +3,21 @@
     padding-bottom: 0.5rem;
     font-size: 1.3rem;
 }
+
+.popThis {
+    animation: pop 300ms;
+}
+
+@keyframes pop {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.04);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}

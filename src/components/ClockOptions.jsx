@@ -1,9 +1,10 @@
 import './Containers.css';
 import './ClockOptions.css';
 
-function ClockOptions({ use24Hours, setUse24Hours }) {
+function ClockOptions({ use24Hours, setUse24Hours, setPopLabel }) {
     function toggleUse24Hours() {
         setUse24Hours(!use24Hours);
+        setPopLabel(true);
     }
 
     return (

@@ -1,0 +1,1 @@
+export const USE_24_HOURS_KEY = "USE24HOURSKEY";

@@ -11,7 +11,7 @@ function StopwatchPage() {
     return (
         <>
             <Stopwatch {...{ isStopwatchOn, stopwatchSeconds, setStopwatchSeconds }} />
-            <StopwatchOptions {...{ isStopwatchOn, setIsStopwatchOn, stopwatchSeconds, setStopwatchSeconds }} />
+            <StopwatchOptions {...{ isStopwatchOn, setIsStopwatchOn, setStopwatchSeconds }} />
             <NavigationPane highlight={CURRENT_PAGE} />
         </>
     );

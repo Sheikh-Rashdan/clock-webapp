@@ -26,8 +26,11 @@ function StopwatchOptions({ isStopwatchOn, setIsStopwatchOn, setStopwatchSeconds
 
     return (
         <div className="optionsContainer">
-            <IconButton icon={playIcon} label={"Play"} func={playStopwatch} />
-            <IconButton icon={pauseIcon} label={"Pause"} func={pauseStopwatch} />
+            {
+                !isStopwatchOn
+                    ? <IconButton icon={playIcon} label={"Play"} func={playStopwatch} />
+                    : <IconButton icon={pauseIcon} label={"Pause"} func={pauseStopwatch} />
+            }
             <IconButton icon={resetIcon} label={"Reset"} func={resetStopwatch} />
         </div>
     );

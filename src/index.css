@@ -1,0 +1,19 @@
+:root {
+  --background-gradient-start: oklch(64.325% 0.10247 71.33);
+  --background-gradient-end: oklch(65.636% 0.14326 49.668);
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+body {
+  background: linear-gradient(to bottom right, var(--background-gradient-start), var(--background-gradient-end));
+  /* background-repeat: no-repeat; */
+  /* background-size: cover; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

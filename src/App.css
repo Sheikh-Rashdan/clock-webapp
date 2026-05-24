@@ -6,3 +6,8 @@
 p {
     margin: 0;
 }
+
+input[type="checkbox"] {
+    align-self: center;
+    margin: 3px;
+}

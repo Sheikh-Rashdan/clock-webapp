@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import Stopwatch from "../components/Stopwatch";
 import StopwatchOptions from "../components/StopwatchOptions";
-import NavigationPane from '../components/NavigationPane';
 
 function StopwatchPage() {
     const CURRENT_PAGE = "stopwatch";
@@ -12,7 +11,6 @@ function StopwatchPage() {
         <>
             <Stopwatch {...{ isStopwatchOn, stopwatchSeconds, setStopwatchSeconds }} />
             <StopwatchOptions {...{ isStopwatchOn, setIsStopwatchOn, setStopwatchSeconds }} />
-            <NavigationPane highlight={CURRENT_PAGE} />
         </>
     );
 }

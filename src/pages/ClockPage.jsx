@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import Clock from '../components/Clock';
 import ClockOptions from '../components/ClockOptions';
-import NavigationPane from '../components/NavigationPane';
 import { USE_24_HOURS_KEY } from '../utils/keys';
 import cleanGetItem from '../utils/cleanGetItem';
 
@@ -18,7 +17,6 @@ function ClockPage() {
         <>
             <Clock {...{ use24Hours, popLabel, setPopLabel }} />
             <ClockOptions {...{ use24Hours, setUse24Hours, setPopLabel }} />
-            <NavigationPane highlight={CURRENT_PAGE} />
         </>
     );
 }

@@ -8,3 +8,8 @@
 .toggleButton:hover {
     background-color: rgba(from white r g b / 0.2);
 }
+
+
+.label {
+    font-size: 2rem;
+}

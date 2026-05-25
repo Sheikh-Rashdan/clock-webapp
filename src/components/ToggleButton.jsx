@@ -1,6 +1,6 @@
 import "./ToggleButton.css"
 
-function ToggleButton({ value, setValue, toggleValues }) {
+function ToggleButton({ value, setValue, toggleValues, label }) {
 
     function toggleValue() {
         let index = ((toggleValues.findIndex(val => val === value)) + 1) % toggleValues.length;
@@ -8,9 +8,12 @@ function ToggleButton({ value, setValue, toggleValues }) {
     }
 
     return (
-        <p className="toggleButton" onClick={toggleValue}>
-            {value}
-        </p>
+        <div>
+            <p className="toggleButton" onClick={toggleValue}>
+                {value}
+            </p>
+            <p className="label">{label}</p>
+        </div>
     );
 }
 

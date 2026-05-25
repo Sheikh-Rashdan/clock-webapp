@@ -1,4 +1,11 @@
 .alarmInputContainer {
     display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
     gap: 1rem;
 }

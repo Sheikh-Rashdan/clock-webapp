@@ -6,11 +6,32 @@ import "./Alarm.css"
 import "./Containers.css"
 
 
-function Alarm() {
+function Alarm({ alarmData, setAlarmData }) {
     const now = new Date();
     const [hourInput, setHourInput] = useState(now.getHours());
     const [minuteInput, setMinuteInput] = useState(now.getMinutes());
     const [meridiemInput, setMeridiemInput] = useState(now.getHours() >= 12 ? "PM" : "AM");
+
+    function addAlarm() {
+        const newAlarmData = [...alarmData];
+        let hours = hourInput;
+
+        if (meridiemInput === "PM") {
+            hours += 12;
+            if (hours === 24) {
+                hours = 0;
+            }
+        }
+        else if (hourInput == 12) {
+            hours = 0;
+        }
+
+        let newAlarmTime = { "hours": hours, "minutes": minuteInput }
+        if (newAlarmData.find((data) => data.hours === hours && data.minutes === minuteInput) === undefined) {
+            newAlarmData.push(newAlarmTime);
+            setAlarmData(newAlarmData);
+        }
+    }
 
     useEffect(() => {
         if (hourInput > 12) {
@@ -31,9 +52,12 @@ function Alarm() {
     return (
         <div className="mainContainer">
             <div className="alarmInputContainer">
-                <Spinbox value={hourInput} setValue={setHourInput} />
-                <Spinbox value={minuteInput} setValue={setMinuteInput} />
-                <ToggleButton value={meridiemInput} setValue={setMeridiemInput} toggleValues={["AM", "PM"]} />
+                <div className="row">
+                    <Spinbox value={hourInput} setValue={setHourInput} label="Hour" />
+                    <Spinbox value={minuteInput} setValue={setMinuteInput} label="Minute" />
+                    <ToggleButton value={meridiemInput} setValue={setMeridiemInput} toggleValues={["AM", "PM"]} label="Meridiem" />
+                </div>
+                <button onClick={addAlarm}>Add Alarm</button>
             </div>
         </div>
     );

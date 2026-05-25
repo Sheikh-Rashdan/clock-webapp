@@ -18,3 +18,17 @@ input[type="checkbox"] {
     cursor: pointer;
     accent-color: var(--background-gradient-end);
 }
+
+button {
+    background-color: rgba(from black r g b / 0.25);
+    border: 3px solid white;
+    border-radius: 100vh;
+    font-size: 2rem;
+    padding: 0.25rem 0.5rem;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--white);
+    color: rgba(from black r g b / 0.9);
+}

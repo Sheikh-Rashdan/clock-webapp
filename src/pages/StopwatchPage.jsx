@@ -11,12 +11,12 @@ function StopwatchPage() {
     const [lapData, setLapData] = useState(cleanGetItem(LAP_DATA_KEY, []));
 
     const handleKeyDowns = useCallback((e) => {
-        const { key } = e;
+        const { key, ctrlKey } = e;
 
         if (key === " ") {
             setIsStopwatchOn(!isStopwatchOn);
         }
-        else if (key === "r") {
+        else if (key === "r" && !ctrlKey) {
             setStopwatchSeconds(0);
             setLapData([]);
         }

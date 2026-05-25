@@ -19,8 +19,14 @@ function StopwatchPage() {
         else if (key === "r" && !ctrlKey) {
             setStopwatchSeconds(0);
             setLapData([]);
+        } if (key === "l") {
+            const newLapData = [...lapData];
+            if (!newLapData.includes(stopwatchSeconds) && stopwatchSeconds !== 0) {
+                newLapData.push(stopwatchSeconds);
+                setLapData(newLapData);
+            }
         }
-    }, [isStopwatchOn]);
+    }, [isStopwatchOn, lapData, stopwatchSeconds]);
 
     useEffect(() => {
         addEventListener('keydown', handleKeyDowns);

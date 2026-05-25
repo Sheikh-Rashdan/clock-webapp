@@ -1,0 +1,24 @@
+.spinboxContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.spinboxContainer img {
+    aspect-ratio: 1;
+    width: 2rem;
+    filter: invert(100%);
+    transition: transform 300ms ease;
+    cursor: pointer;
+}
+
+.spinboxContainer img:hover {
+    transform: scale(1.1);
+}
+
+.spinboxContainer p {
+    border: solid 4px white;
+    border-radius: 1rem;
+    padding: 0 0.3rem;
+}

@@ -1,0 +1,10 @@
+.toggleButton {
+    border: solid 4px white;
+    border-radius: 1rem;
+    padding: 0 0.3rem;
+    cursor: pointer;
+}
+
+.toggleButton:hover {
+    background-color: rgba(from white r g b / 0.2);
+}

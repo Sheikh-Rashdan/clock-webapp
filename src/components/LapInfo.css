@@ -47,6 +47,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     row-gap: 1rem;
+    mask-image: linear-gradient(white 95%, transparent);
 }
 
 .lapTimeCard {

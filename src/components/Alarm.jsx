@@ -19,7 +19,7 @@ function Alarm({ alarmData, setAlarmData }) {
         if (meridiemInput === "PM") {
             hours += 12;
             if (hours === 24) {
-                hours = 0;
+                hours = 12;
             }
         }
         else if (hourInput == 12) {
@@ -53,8 +53,8 @@ function Alarm({ alarmData, setAlarmData }) {
         <div className="mainContainer">
             <div className="alarmInputContainer">
                 <div className="row">
-                    <Spinbox value={hourInput} setValue={setHourInput} label="Hour" />
-                    <Spinbox value={minuteInput} setValue={setMinuteInput} label="Minute" />
+                    <Spinbox value={hourInput} setValue={setHourInput} label="Hours" />
+                    <Spinbox value={minuteInput} setValue={setMinuteInput} label="Minutes" />
                     <ToggleButton value={meridiemInput} setValue={setMeridiemInput} toggleValues={["AM", "PM"]} label="Meridiem" />
                 </div>
                 <button onClick={addAlarm}>Add Alarm</button>

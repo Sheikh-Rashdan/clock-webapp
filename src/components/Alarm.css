@@ -9,3 +9,18 @@
     flex-direction: row;
     gap: 1rem;
 }
+
+.alarmCard {
+    background-color: rgba(from black r g b / 0.3);
+    border: 3px solid white;
+    padding: 0.4rem;
+    font-size: 1.8rem;
+    border-radius: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+    .row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}

@@ -3,6 +3,7 @@
     max-height: 10rem;
     overflow-y: scroll;
     animation: scaleUp 300ms ease;
+    scroll-behavior: smooth;
 }
 
 @keyframes scaleUp {

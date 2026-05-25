@@ -23,9 +23,10 @@ button {
     background-color: rgba(from black r g b / 0.25);
     border: 3px solid white;
     border-radius: 100vh;
-    font-size: 2rem;
+    font-size: 1.5rem;
     padding: 0.25rem 0.5rem;
     cursor: pointer;
+    transition: all 300ms ease;
 }
 
 button:hover {

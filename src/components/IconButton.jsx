@@ -1,13 +1,12 @@
 import './IconButton.css';
 
-function NavigationButton({ label, icon, func }) {
-
+function IconButton({ label, icon, func, disabled }) {
     return (
-        <div className={"iconButton"} onClick={func}>
+        <div className={`iconButton ${disabled ? "disabled" : ""}`} onClick={func}>
             <img src={icon} />
             {label}
         </div>
     );
 }
 
-export default NavigationButton;
+export default IconButton;

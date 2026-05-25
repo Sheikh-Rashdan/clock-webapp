@@ -1,0 +1,54 @@
+.lapTimeContainer {
+    flex-direction: column;
+    max-height: 10rem;
+    overflow-y: scroll;
+    animation: scaleUp 300ms ease;
+}
+
+@keyframes scaleUp {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.lapTimeLabelContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    gap: 1rem;
+}
+
+.lapTimeLabelContainer img {
+    width: 1.25rem;
+    aspect-ratio: 1;
+    filter: invert(100%);
+    cursor: pointer;
+    transition: transform 300ms ease;
+}
+
+.lapTimeLabelContainer img:hover {
+    transform: scale(1.1);
+}
+
+.lapTimeContainer::-webkit-scrollbar {
+    display: none;
+}
+
+.lapTimeLabel {
+    font-size: 1.5rem;
+}
+
+.lapTimesContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 1rem;
+}
+
+.lapTimeCard {
+    animation: scaleUp 300ms ease;
+}

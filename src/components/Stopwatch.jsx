@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import zfill from "../utils/zfill";
+import { getFormattedStopwatchSeconds } from "../utils/formatted";
 
 import './Containers.css';
 import './Stopwatch.css';
@@ -13,19 +13,9 @@ function Stopwatch({ isStopwatchOn, stopwatchSeconds, setStopwatchSeconds }) {
         }
     }, [isStopwatchOn, stopwatchSeconds, setStopwatchSeconds]);
 
-    function getFormattedStopwatchSeconds() {
-        let seconds = stopwatchSeconds % 60;
-        let minutes = Math.floor(stopwatchSeconds / 60) % 60;
-        let hours = Math.floor(stopwatchSeconds / 3600);
-        seconds = zfill(seconds);
-        minutes = zfill(minutes);
-        hours = zfill(hours);
-        return `${hours}:${minutes}:${seconds}`;
-    }
-
     return (
         <div className="mainContainer">
-            {getFormattedStopwatchSeconds()}
+            {getFormattedStopwatchSeconds(stopwatchSeconds)}
         </div>
     );
 }
